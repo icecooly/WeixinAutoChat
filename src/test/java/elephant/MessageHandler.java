@@ -83,6 +83,7 @@ public class MessageHandler implements WeixinCallback{
 				if(msg.MsgType==Message.TYPE_文本消息){
 					if(msg.ToUserName.equals(chat.getMySelf().UserName)){
 						if(msg.Content.equals(CHAT_ROOM_PASSWORD)){
+							chat.sendTextMsg(msg.FromUserName, "[微笑]群口令正确");
 							addMember4ChatRoom(msg.FromUserName,CHAT_ROOM_NAME);
 						}
 					}
@@ -90,7 +91,7 @@ public class MessageHandler implements WeixinCallback{
 				if(msg.MsgType==Message.TYPE_好友确认消息){
 					logger.debug("收到好友确认消息:{}",JSONUtil.dump(msg));
 					chat.verifyUser(msg.RecommendInfo.UserName,msg.RecommendInfo.Ticket);
-					chat.sendTextMsg(msg.RecommendInfo.UserName, "[微笑]请输入"+CHAT_ROOM_NAME+"群密码:");
+					chat.sendTextMsg(msg.RecommendInfo.UserName, "[微笑]请您输入"+CHAT_ROOM_NAME+"群口令:");
 				}
 			} catch (Exception e) {
 				logger.error(e.getMessage(),e);
