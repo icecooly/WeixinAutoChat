@@ -4,7 +4,7 @@
 
 	<groupId>elephant.WeixinAutoChat</groupId>
 	<artifactId>WeixinAutoChat</artifactId>
-	<packaging>pom</packaging>
+	<packaging>jar</packaging>
 	<version>1.0.0</version>
 
 
@@ -48,11 +48,12 @@
 			<artifactId>javase</artifactId>
 			<version>3.3.0</version>
 		</dependency>
-	</dependencies>
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.2.33</version>
+		</dependency>
 
-	<build>
-		<plugins>
-		</plugins>
-	</build>
+	</dependencies>
 
 </project>
