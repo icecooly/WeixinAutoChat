@@ -354,8 +354,7 @@ public class WeixinApiService {
 			return JSONUtil.fromJson(json, clazz);
 		} finally {
 			if(logger.isDebugEnabled()){
-				logger.debug("post url:{} body:{} json:{}",
-						url,body,json);
+				logger.debug("post url:{} body:{} json:{}",url,body,json);
 			}
 		}
 	}
