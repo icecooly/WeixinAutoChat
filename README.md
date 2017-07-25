@@ -9,5 +9,5 @@ chat.login();
 ```
 
 ## 示例
-
-![](https://github.com/sylnsfar/qrcode/blob/master/example/qrs0.jpg)
+添加微信机器人(wxjava群口令：999999)
+![](https://github.com/icecooly/WeixinAutoChat/blob/master/qrcode.jpg)
