@@ -38,7 +38,7 @@ public class Message {
 		public String Alias;//": "",
 		public String Scene;//": 30,
 		public int VerifyFlag;//": 0,
-		public int AttrStatus;//": 66661,
+		public long AttrStatus;//": 66661,
 		public int Sex;//": 1,
 		public String Ticket;//": "v2_41de4624f43e9e9091e9b28167efa3c40f1e29b70451d7e8a6c83a54407e6268b660b67166fd64391533e2b7c7a643647ac3a755ad755e726274d2fec297c062@stranger",
 		public int OpCode;//": 2
