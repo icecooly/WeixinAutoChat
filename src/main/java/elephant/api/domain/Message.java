@@ -27,6 +27,12 @@ public class Message {
 	public static final int TYPE_系统消息=10000;
 	public static final int TYPE_撤回消息=10002;
 	//
+	public static final String 表情_微笑="[微笑]";
+	public static final String 表情_玫瑰="[玫瑰]";
+	public static final String 表情_惊恐="[惊恐]";
+	public static final String 表情_坏笑="[坏笑]";
+	public static final String 表情_强="[强]";
+	//
 	public static class RecommendInfo{
 		public String UserName;//": "@6ba9f91be84f4e1c3e0695bd535a1720840022cc508d27421bccfb410757b079",
 		public String NickName;//": "double",
