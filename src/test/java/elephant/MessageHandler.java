@@ -83,7 +83,7 @@ public class MessageHandler implements WeixinCallback{
 	}
 	//
 	private void replyMsg(String toUserName,String fromMsg) throws Exception {
-		if(fromMsg.startsWith("你的国籍是")) {
+		if(fromMsg.indexOf("你的国籍是")!=-1) {
 			//发图片
 			InputStream is=this.getClass().getResourceAsStream("chinagq.png");
 			chat.sendImgMsg(toUserName, "image.png", toByteArray(is));
