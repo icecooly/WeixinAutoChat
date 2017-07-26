@@ -1,4 +1,4 @@
-# WeixinAutoChat
+# WeixinAutoChat(基于java8)
 微信机器人
 
 ```java
