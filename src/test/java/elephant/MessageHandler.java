@@ -30,6 +30,8 @@ public class MessageHandler implements WeixinCallback{
 	public static final String CHAT_ROOM_PASSWORD="999999";
 	public static final String CHAT_ROOM_NAME="wxjava";
 	//
+	private String chatRoomUserName;
+	//
 	@Override
 	public void onLogin() {
 		logger.debug("onLogin");
@@ -42,6 +44,7 @@ public class MessageHandler implements WeixinCallback{
 			}
 			Contact chatRoom=chat.getChatRoomByNickName(chatRoomNickName);
 			if(chatRoom!=null){
+				chatRoomUserName=chatRoom.UserName;
 				chat.batchGetContact(Arrays.asList(chatRoom.UserName));
 				chatRoom=chat.getChatRoomByNickName(chatRoomNickName);
 				for (Member member:chatRoom.MemberList) {
@@ -81,10 +84,19 @@ public class MessageHandler implements WeixinCallback{
 			}
 			try {
 				if(msg.MsgType==Message.TYPE_文本消息){
-					if(msg.ToUserName.equals(chat.getMySelf().UserName)){
+					if(msg.ToUserName.equals(chat.getMySelf().UserName)){//私聊消息
 						if(msg.Content.equals(CHAT_ROOM_PASSWORD)){
 							chat.sendTextMsg(msg.FromUserName, "[微笑]群口令正确");
 							addMember4ChatRoom(msg.FromUserName,CHAT_ROOM_NAME);
+						}else {
+							chat.sendTextMsg(msg.FromUserName,AutoReplyAI.query(msg.Content));
+						}
+					}
+					if(msg.ToUserName.equals(chatRoomUserName)&&
+							(!msg.FromUserName.equals(chat.getMySelf().UserName))) {//别人在wxjava群里说话 @我了
+						if(msg.Content.indexOf("@wxjava")!=-1) {
+							String content=msg.Content.replaceAll("@wxjava","");
+							chat.sendTextMsg(msg.ToUserName,AutoReplyAI.query(content));
 						}
 					}
 				}
