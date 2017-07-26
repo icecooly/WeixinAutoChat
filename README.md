@@ -20,4 +20,4 @@ chat.login();
 
 ## 示例
 微信扫码添加机器人(wxjava群口令：999999)
-![](https://github.com/icecooly/WeixinAutoChat/blob/master/qrcodenew.jpg)
+![](https://raw.githubusercontent.com/icecooly/WeixinAutoChat/master/qrcodenew.jpg)
