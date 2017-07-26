@@ -5,7 +5,7 @@ package elephant;
  * @author skydu
  *
  */
-public class WeixinAutoChatTest {
+public class Main {
 	//
 	public static void main(String[] args) throws Exception {
 		MessageHandler handler = new MessageHandler();

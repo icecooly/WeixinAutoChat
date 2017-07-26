@@ -17,14 +17,6 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="var" path="M2_REPO/org/slf4j/slf4j-api/1.7.21/slf4j-api-1.7.21.jar"/>
-	<classpathentry kind="var" path="M2_REPO/org/apache/logging/log4j/log4j-slf4j-impl/2.6.2/log4j-slf4j-impl-2.6.2.jar"/>
-	<classpathentry kind="var" path="M2_REPO/org/apache/logging/log4j/log4j-api/2.6.2/log4j-api-2.6.2.jar"/>
-	<classpathentry kind="var" path="M2_REPO/org/apache/logging/log4j/log4j-core/2.6.2/log4j-core-2.6.2.jar"/>
-	<classpathentry kind="var" path="M2_REPO/com/google/zxing/core/3.3.0/core-3.3.0.jar"/>
-	<classpathentry kind="var" path="M2_REPO/com/google/zxing/javase/3.3.0/javase-3.3.0.jar"/>
-	<classpathentry kind="var" path="M2_REPO/com/beust/jcommander/1.48/jcommander-1.48.jar"/>
-	<classpathentry kind="var" path="M2_REPO/com/github/jai-imageio/jai-imageio-core/1.3.1/jai-imageio-core-1.3.1.jar"/>
 	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>

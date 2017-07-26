@@ -1,5 +1,8 @@
 package elephant;
 
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -70,6 +73,25 @@ public class MessageHandler implements WeixinCallback{
 		}
 	}
 	//
+	public static byte[] toByteArray(InputStream input) throws IOException {
+		ByteArrayOutputStream os = new ByteArrayOutputStream();
+		byte[] buf = new byte[1024];
+		for (int n = input.read(buf); n != -1; n = input.read(buf)) {
+			os.write(buf, 0, n);
+		}
+		return os.toByteArray();
+	}
+	//
+	private void replyMsg(String toUserName,String fromMsg) throws Exception {
+		if(fromMsg.startsWith("你的国籍是")) {
+			//发图片
+			InputStream is=this.getClass().getResourceAsStream("chinagq.png");
+			chat.sendImgMsg(toUserName, "image.png", toByteArray(is));
+		}else {
+			chat.sendTextMsg(toUserName,AutoReplyAI.query(fromMsg));
+		}
+	}
+	//
 	@Override
 	public void onReceiveMsg(List<Message> msgs) {
 		logger.info("onReceiveMsg msgs size:{}",msgs.size());
@@ -88,15 +110,15 @@ public class MessageHandler implements WeixinCallback{
 						if(msg.Content.equals(CHAT_ROOM_PASSWORD)){
 							chat.sendTextMsg(msg.FromUserName, "[微笑]群口令正确");
 							addMember4ChatRoom(msg.FromUserName,CHAT_ROOM_NAME);
-						}else {
-							chat.sendTextMsg(msg.FromUserName,AutoReplyAI.query(msg.Content));
+						}else{
+							replyMsg(msg.FromUserName,msg.Content.trim());
 						}
 					}
 					if(msg.ToUserName.equals(chatRoomUserName)&&
 							(!msg.FromUserName.equals(chat.getMySelf().UserName))) {//别人在wxjava群里说话 @我了
 						if(msg.Content.indexOf("@wxjava")!=-1) {
 							String content=msg.Content.replaceAll("@wxjava","");
-							chat.sendTextMsg(msg.ToUserName,AutoReplyAI.query(content));
+							replyMsg(msg.ToUserName,content.trim());
 						}
 					}
 				}
