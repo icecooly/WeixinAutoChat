@@ -8,7 +8,7 @@ package elephant;
 public class Main {
 	//
 	public static void main(String[] args) throws Exception {
-		MessageHandler handler = new MessageHandler();
+		RobotMessageHandler handler = new RobotMessageHandler();
 		WeixinAutoChat chat = new WeixinAutoChat(handler);
 		handler.chat = chat;
 		chat.login();

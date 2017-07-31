@@ -18,13 +18,13 @@ import elephant.api.domain.Message;
 import elephant.utils.JSONUtil;
 
 /**
- * 
+ * 微信机器人
  * @author skydu
  *
  */
-public class MessageHandler implements WeixinCallback{
+public class RobotMessageHandler implements WeixinCallback{
 	//
-	private static Logger logger=LoggerFactory.getLogger(MessageHandler.class);
+	private static Logger logger=LoggerFactory.getLogger(RobotMessageHandler.class);
 	//
 	public WeixinAutoChat chat;
 	//
@@ -114,7 +114,7 @@ public class MessageHandler implements WeixinCallback{
 							replyMsg(msg.FromUserName,msg.Content.trim());
 						}
 					}
-					if(msg.ToUserName.equals(chatRoomUserName)&&
+					else if(msg.ToUserName.equals(chatRoomUserName)&&
 							(!msg.FromUserName.equals(chat.getMySelf().UserName))) {//别人在wxjava群里说话 @我了
 						if(msg.Content.indexOf("@wxjava")!=-1) {
 							String content=msg.Content.replaceAll("@wxjava","");
