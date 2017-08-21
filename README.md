@@ -17,8 +17,3 @@ chat.login();
 * 自动加好友
 * 逗人玩
 * ...
-
-## 示例
-微信扫码添加机器人(wxjava群口令：999999)
-![](https://raw.githubusercontent.com/icecooly/WeixinAutoChat/master/qrcode.jpeg)
-![](https://github.com/icecooly/WeixinAutoChat/raw/master/chat.jpg)
