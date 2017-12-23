@@ -52,7 +52,10 @@ public class WeixinApiService {
 	public static String LANG="zh_CN";
 	//
 	public WeixinApiService(){
-		httpClient=FastHttpClient.newBuilder().cookieJar(cookieJar).build();
+		httpClient=FastHttpClient.newBuilder().
+				readTimeout(120, TimeUnit.SECONDS).
+				connectTimeout(120, TimeUnit.SECONDS).
+				cookieJar(cookieJar).build();
 	}
 	//
 	public String getUUID() throws Exception{
