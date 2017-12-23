@@ -76,7 +76,7 @@
 		<dependency>
 			<groupId>com.github.icecooly</groupId>
 			<artifactId>FastHttpClient</artifactId>
-			<version>1.3</version>
+			<version>1.4</version>
 		</dependency>
 		
 		<dependency>
