@@ -8,6 +8,22 @@ handler.chat = chat;
 chat.login();
 ```
 
+Download
+--------
+
+Download Jar or grab via Maven:
+```xml
+<dependency>
+  <groupId>com.github.icecooly</groupId>
+  <artifactId>WeixinAutoChat</artifactId>
+  <version>1.0.1</version>
+</dependency>
+```
+or Gradle:
+```groovy
+compile 'com.github.icecooly:WeixinAutoChat:1.0.1'
+```
+
 ----------------
 
 常见的场景

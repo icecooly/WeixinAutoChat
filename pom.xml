@@ -5,9 +5,9 @@
 	<groupId>com.github.icecooly</groupId>
 	<artifactId>WeixinAutoChat</artifactId>
 	<packaging>jar</packaging>
-	<version>1.0.0</version>
+	<version>1.0.1</version>
 	<name>WeixinAutoChat</name>
-	<description>A Java library for okhttp3</description>
+	<description>A Java library for WeixinAutoChat</description>
 	<url>https://github.com/icecooly/WeixinAutoChat</url>
 
 
@@ -51,11 +51,13 @@
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-core</artifactId>
 			<version>2.6.2</version>
+			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.logging.log4j</groupId>
 			<artifactId>log4j-api</artifactId>
 			<version>2.6.2</version>
+			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>com.google.zxing</groupId>
